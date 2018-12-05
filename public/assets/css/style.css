@@ -35,6 +35,17 @@
   font-size: 20px;
   margin: 0px;
 }
+.noArticles:hover {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin: 0px;
+}
+.noArticles:visited {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin: 0px;
+  color: rgb(169, 164, 187);
+}
 .footer {
   background-color: grey;
   margin: 10px 0px 0px 0px;
