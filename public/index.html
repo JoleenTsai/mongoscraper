@@ -61,16 +61,16 @@
     <div class="row">
       <div id="articles"></div>
     </div>
-    <!-- Modal Structure -->
-    <div id="modalSaved" class="modal">
-      <div class="modal-content">
-        <h4>Article Saved</h4>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-      </div>
-    </div>
   </div>
+  <!-- Modal Structure -->
+      <div id="modalSaved" class="modal">
+        <div class="modal-content">
+          <h4>Article Saved</h4>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+      </div>
   <div class="Jumbotron-fluid text-center" id="articleScrape">
     <p class="noArticleHeader">What would you like to do?</p>
     <p class="noArticles">Scrape New Articles</p>
@@ -94,7 +94,7 @@
     crossorigin="anonymous"></script>
   <script src="app.js"></script>
   <script>
-    req.body(document.getElementById('articleScrape'))
+    req.body(document.getElementById('modalSaved'))
   </script>
 </body>
 
