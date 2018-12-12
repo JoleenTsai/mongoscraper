@@ -46,4 +46,4 @@ app.get('/stacks', (req, res) =>{
       .catch(e => console.log(e))
     })
 
-    app.listen(3070, _ => console.log('https://localhost:3070'))
+    app.listen(3050, _ => console.log('https://localhost:3050'))
