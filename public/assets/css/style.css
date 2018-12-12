@@ -3,11 +3,13 @@
   background-color: #B0C4DE;
   border-radius: 15px;
   opacity: .6;
+  color: black;
 }
 .btn:hover {
   background-color: rgb(146, 181, 226);
   border-radius: 15px;
   opacity: .5;
+  color: black;
 }
 .titlePic {
   padding-top: 10px;

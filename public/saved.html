@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
   <meta charset="UTF-8">
@@ -16,36 +16,37 @@
   <!-- PARALLAX -->
   <style>
     .parallax1 {
-        background-image: url('../public/assets/images/cafe-coffee.jpg');
-        height: 600px;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    </style>
+      background-image: url('../public/assets/images/cafe-coffee.jpg');
+      height: 600px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- TITLE/NAV -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Mongo Scraper</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="./savedArticles.html">Saved Articles<span class="sr-only">(current)</span></a>
-        </li>
-        <button class="btn" type="submit">Clear Articles!</button>
-      </ul>
-      </form>
-    </div>
-  </nav>
+  <header>
+    <!-- TITLE/NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Mongo Scraper</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="savedarticles.html">Saved Articles<span class="sr-only">(current)</span></a>
+          </li>
+          <button class="btn" type="submit">Clear Articles!</button>
+        </ul>
+        </form>
+      </div>
+    </nav>
   <!-- PARALLAX -->
   <div class="parallax1">
     <div class="row titlePic">
@@ -55,21 +56,45 @@
       <h4>YOUR SAVED ARTICLES</h4>
     </div>
   </div>
-  <!-- HEADER IMAGE -->
-  <div class="Jumbotron-fluid text-center">
-    <p class="noArticleHeader">What would you like to do?</p>
-  </div>
+
   <main>
     <div id="wrapper">
+      <!-- <h1>Note Scraper</h1> -->
       <h2>Saved Articles</h2>
       <hr>
       <div class="row">
-        <div id="savedArticles"></div>
-        <!-- <div id="notes"></div> -->
+        <div id="saved"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger center" href="#modal1">Modal</a>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <!-- Need to add the article id -->
+          <h4>Notes For Article: "ID goes here"</h4>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                  <label for="textarea1">New Note</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Save Note</a>
+        </div>
       </div>
     </div>
   </main>
-  </a>
+
+
   <!-- FOOTER -->
   <footer>
     <div class="footer text-center">

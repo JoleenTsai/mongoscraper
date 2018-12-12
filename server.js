@@ -6,37 +6,44 @@ const path = require('path')
 const cheerio = require('cheerio')
 
 const app = express()
-mongoose.connect('mongodb://localhost/scraper', { useNewUrlParser: true })
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
+
+mongoose.connect(MONGODB_URI);
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyparser.urlencoded({ urlencoded: true }))
 app.use(bodyparser.json())
 
-
-app.listen(3050, _ => console.log('https://localhost:3050'))
-
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// mongoose.connect(MONGODB_URI);
+const Schema = mongoose.Schema
 
-axios.get('https://www.nytimes.com/')
+const stackSchema = new Schema ({
+  question: String,
+})
+
+const Stack = mongoose.model('Stack', stackSchema)
+
+app.get('/stacks', (req, res) =>{
+  axios.get('https://www.nytimes.com/')
   .then(r => {
     const $ = cheerio.load(r.data)
+    const stackArr = []
     $('div.css-1j836f9.esl82me3').each((i, elem) => {
-      console.log(`Headline: ${$(elem).children('h2').text()}`)
+      stackArr.push({
+        question: `Headline: ${$(elem).children('h2').text()}`
+      })
     })
+    Stack.create(stackArr)
+    res.json(stackArr)
+  })
     $('div.css-1ee8y2t.assetWrapper').each((i, elem) => {
-      console.log(`
+      res.send(`
       Summary: ${$(elem).children('div').children('a').text()}
       Image: ${$(elem).children('div').children('div').children('a').children('div').children('figure').children('img').text()}
       `)
     })
-    // $('div.css-1yjtett').each((i, elem) => {
-    //   console.log(`URL: ${$(elem).children('a').text()}`)
-    // })
-    // $('div.css-14clni4.eqveam62').each((i, elem) => {
-    //   console.log(`Headline: ${$(elem).children('h3').text()}`)
-    // })
-  })
-  .catch(e => console.log(e))
+      .catch(e => console.log(e))
+    })
+
+    app.listen(3070, _ => console.log('https://localhost:3070'))
