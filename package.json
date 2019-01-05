@@ -22,7 +22,10 @@
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
+    "express-react-views": "^0.11.0",
     "mongojs": "^2.6.0",
-    "mongoose": "^5.3.14"
+    "mongoose": "^5.3.14",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   }
 }
