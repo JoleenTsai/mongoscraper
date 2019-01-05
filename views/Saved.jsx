@@ -14,6 +14,7 @@ const Saved = props =>
       <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
+      <div className="parallax1">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">Mongo Scraper</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -29,8 +30,6 @@ const Saved = props =>
           </ul>
         </div>
       </nav>
-      <div className="mainContainer">
-        <div className="parallax1">
           <div className="row titlePic">
             <h1>Mongo Scraper</h1>
           </div>
@@ -50,7 +49,11 @@ const Saved = props =>
                 </div>
               ))
             }
+      <footer>
+      <div className="footer text-center">
+        <a href='https://www.nytimes.com/' target="_blank" className="footerLink">New York Times</a>
       </div>
+  </footer>
             <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossOrigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossOrigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossOrigin="anonymous"></script>

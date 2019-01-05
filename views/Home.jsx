@@ -14,6 +14,7 @@ const Home = props =>
         <link rel="stylesheet" href="./css/style.css"/>
     </head>
     <body>
+    <div className="parallax1">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <a className="navbar-brand" href="#">Mongo Scraper</a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -31,8 +32,6 @@ const Home = props =>
       </ul>
     </div>
   </nav>
-    <div className="mainContainer">
-    <div className="parallax1">
     <div className="row titlePic">
       <h1>Mongo Scraper</h1>
     </div>
@@ -60,7 +59,6 @@ const Home = props =>
             </div>
           ))
       }
-      </div>
       </div>
        <footer>
     <div className="footer text-center">

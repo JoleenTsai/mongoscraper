@@ -7,18 +7,20 @@ async function getStacks() {
     axios.get('https://www.nytimes.com/section/world')
       .then(r => r.data)
       .then(r => {
-        let stack = []
+        let data = []
         const $ = cheerio.load(r)
         $('div.story-body').each((i, elem) => {
-          data.push({
+          let stack = {}
+          stack = 
+          {
             headline: $(elem).children('h2.headline').text(),
             summary: $(elem).children("p.summary").text(),
             url: $(elem).children('div.thumb').children('a').attr('href'),
             image: $(elem).children('div.thumb').children('a').children('img').attr('src'),
             isSaved: false
-          })
+          }
+          data.push(stack)
         })
-        console.log(data)
         resolve(data)
       })
   })
@@ -26,6 +28,11 @@ async function getStacks() {
 }
 
 module.exports = app => {
+  app.get('/saves', (req, res) => {
+    Stack.find({ isSaved: true })
+    .then(r=> res.json(r))
+    .catch(e => console.error(e))
+  })
   app.put('./stack/:id', (req, res) => {
     Stack.findByIdAndUpdate(req.params.id, { isSaved: true })
       .then(console.log('hi'))
