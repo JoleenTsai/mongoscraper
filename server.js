@@ -6,9 +6,9 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 
 const app = express()
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
 
-// mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI);
 
 app.use(express.static(path.join(__dirname, 'public')))
 // app.use(bodyparser.urlencoded({ urlencoded: true }))
